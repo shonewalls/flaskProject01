@@ -1,23 +1,23 @@
 import csv
 from flask import Flask, render_template, jsonify
 
-web = Flask(__name__)
+app = Flask(__name__)
 
-@web.route('/homePage')
+@app.route('/homePage')
 def index():
     return render_template('homePage.html')
 
-@web.route('/')
+@app.route('/')
 def hello_world(): 
     return 'nihao!'
 
-@web.route('/api/mydata', methods=['GET'])
+@app.route('/api/mydata', methods=['GET'])
 def api_mydata():
     data = get_data()
     return jsonify(data)
 
 
-@web.route('/us-cities/<name>')
+@app.route('/us-cities/<name>')
 def city(name):
     with open('static/us-cities.csv', 'r') as f:
         reader = csv.DictReader(f)
@@ -38,4 +38,4 @@ def get_data():
 
 
 if __name__ == '__main__':
-    web.run()
+    app.run()
