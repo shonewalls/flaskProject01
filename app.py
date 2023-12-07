@@ -8,7 +8,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/')
-def hello_world():  # put application's code here
+def hello_world(): 
     return 'Hello World!'
 
 @app.route('/api/mydata', methods=['GET'])
@@ -28,7 +28,6 @@ def city(name):
 
 def get_data():
     data = []
-    # 替换为你的CSV文件路径
     with open('static/amazon-reviews.csv', 'r') as f:
         reader = csv.DictReader(f)
         for row in reader:
