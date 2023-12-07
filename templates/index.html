@@ -4,7 +4,6 @@
     <title>Assignment</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
-        /* 添加一些基本的样式 */
         .header {
             text-align: center;
             padding: 20px;
@@ -23,7 +22,7 @@
 <body>
     <div class="header">
         <h1 id="name">Xiao Yang</h1>
-        <h2 id="id">xxy5991</h2>
+        <h2 id="id">75991</h2>
         <img id="photo" src="../static/图片1.jpg" alt="我的照片" width="200px" />
     </div>
     <table id="data-table">
@@ -34,16 +33,13 @@
                 <th>title</th>
                 <th>review</th>
                 <th>score image</th>
-                <!-- 添加更多列名，根据你的数据 -->
             </tr>
         </thead>
         <tbody>
-            <!-- 数据将在这里填充 -->
         </tbody>
     </table>
 
     <script>
-        // 使用jQuery从你的后端获取数据
         $.get('/api/mydata', function(data) {
     var tableBody = $('#data-table tbody');
     data.forEach(function(item) {
